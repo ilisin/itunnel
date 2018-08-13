@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ilisin/itunnel/log"
 	"github.com/ilisin/itunnel/cache"
+	"github.com/ilisin/itunnel/log"
 )
 
 const (

@@ -1,17 +1,16 @@
 package server
 
 import (
-		"math/rand"
+	"fmt"
+	"math/rand"
 	"os"
 	"runtime/debug"
 	"time"
-	"fmt"
 
 	"github.com/ilisin/itunnel/conn"
 	"github.com/ilisin/itunnel/log"
 	"github.com/ilisin/itunnel/msg"
 	"github.com/ilisin/itunnel/util"
-
 )
 
 const (
@@ -43,8 +42,7 @@ func NewProxy(pxyConn conn.Conn, regPxy *msg.RegProxy) {
 	// set logging prefix
 	pxyConn.SetType("pxy")
 
-
-	fmt.Println("接受到链接.....",regPxy.ClientId)
+	fmt.Println("接受到链接.....", regPxy.ClientId)
 
 	// look up the control connection for this proxy
 	pxyConn.Info("Registering new proxy for %s", regPxy.ClientId)
@@ -54,7 +52,7 @@ func NewProxy(pxyConn conn.Conn, regPxy *msg.RegProxy) {
 		panic("No client found for identifier: " + regPxy.ClientId)
 	}
 
-	ctl.RegisterProxy(pxyConn,!regPxy.LongConnect)
+	ctl.RegisterProxy(pxyConn, !regPxy.LongConnect)
 }
 
 // Listen for incoming control and proxy connections
@@ -132,7 +130,7 @@ func Main() {
 		listeners["http"] = startHttpListener(opts.httpAddr)
 	}
 
-	if opts.tcpAddr != ""{
+	if opts.tcpAddr != "" {
 		listeners["tcp"] = startTcpListener(opts.tcpAddr)
 	}
 

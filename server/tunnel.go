@@ -104,7 +104,7 @@ func NewTunnel(m *msg.ReqTunnel, ctl *Control) (t *Tunnel, err error) {
 	}
 
 	proto := t.req.Protocol
-	fmt.Println("request --->",proto)
+	fmt.Println("request --->", proto)
 	switch proto {
 	case "tcp":
 		bindTcp := func(port int) error {
@@ -119,16 +119,16 @@ func NewTunnel(m *msg.ReqTunnel, ctl *Control) (t *Tunnel, err error) {
 
 			// register it
 
-			fmt.Println("register---->",t.url)
+			fmt.Println("register---->", t.url)
 
 			if err = tunnelRegistry.RegisterAndCache(t.url, t); err != nil {
-			//if err = tunnelRegistry.RegisterAndCache("tcp://0.0.0.0", t); err != nil {
+				//if err = tunnelRegistry.RegisterAndCache("tcp://0.0.0.0", t); err != nil {
 				// This should never be possible because the OS will
 				// only assign available ports to us.
 				t.listener.Close()
 				err = fmt.Errorf("TCP listener bound, but failed to register %s", t.url)
 				return err
-			}else{
+			} else {
 				tcpRegKey = t.url
 				//ctl.tcpRegKey = t.url
 			}

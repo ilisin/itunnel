@@ -98,7 +98,7 @@ type ReqProxy struct {
 // After a client receives a ReqProxy message, it opens a new
 // connection to the server and sends a RegProxy message.
 type RegProxy struct {
-	ClientId string
+	ClientId    string
 	LongConnect bool // 区分http / tcp , 是否长链接
 }
 

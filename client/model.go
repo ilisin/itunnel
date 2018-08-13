@@ -1,7 +1,7 @@
 package client
 
 import (
-		"fmt"
+	"fmt"
 	"io/ioutil"
 	"math"
 	"net"
@@ -50,8 +50,8 @@ type ClientModel struct {
 	proxyUrl      string
 	authToken     string
 	//tlsConfig     *tls.Config
-	tunnelConfig  map[string]*TunnelConfiguration
-	configPath    string
+	tunnelConfig map[string]*TunnelConfiguration
+	configPath   string
 }
 
 func newClientModel(config *Configuration, ctl mvc.Controller) *ClientModel {
@@ -357,7 +357,7 @@ func (c *ClientModel) proxy() {
 	defer remoteConn.Close()
 
 	lc := false
-	for k,_ := range c.protoMap{
+	for k, _ := range c.protoMap {
 		fmt.Println(k)
 		if k == "tcp" {
 			lc = true
@@ -365,7 +365,7 @@ func (c *ClientModel) proxy() {
 		}
 	}
 
-	err = msg.WriteMsg(remoteConn, &msg.RegProxy{ClientId: c.id,LongConnect:lc})
+	err = msg.WriteMsg(remoteConn, &msg.RegProxy{ClientId: c.id, LongConnect: lc})
 	if err != nil {
 		remoteConn.Error("Failed to write RegProxy: %v", err)
 		return

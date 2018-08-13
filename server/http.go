@@ -1,13 +1,13 @@
 package server
 
 import (
-		"fmt"
+	"fmt"
 	"strings"
 	"time"
 
-	"github.com/inconshreveable/go-vhost"
 	"github.com/ilisin/itunnel/conn"
 	"github.com/ilisin/itunnel/log"
+	"github.com/inconshreveable/go-vhost"
 )
 
 const (

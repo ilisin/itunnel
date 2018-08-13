@@ -7,7 +7,7 @@ import (
 type Options struct {
 	httpAddr   string
 	httpsAddr  string
-	tcpAddr string // 端口段(1 1 对应)
+	tcpAddr    string // 端口段(1 1 对应)
 	tunnelAddr string
 	domain     string
 	tlsCrt     string
@@ -31,7 +31,7 @@ func parseArgs() *Options {
 	return &Options{
 		httpAddr:   *httpAddr,
 		httpsAddr:  *httpsAddr,
-		tcpAddr: *tcpAddr,
+		tcpAddr:    *tcpAddr,
 		tunnelAddr: *tunnelAddr,
 		domain:     *domain,
 		tlsCrt:     *tlsCrt,

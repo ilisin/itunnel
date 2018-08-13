@@ -1,8 +1,8 @@
 package mvc
 
 import (
-	metrics "github.com/rcrowley/go-metrics"
 	"github.com/ilisin/itunnel/proto"
+	metrics "github.com/rcrowley/go-metrics"
 )
 
 type UpdateStatus int

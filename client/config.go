@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"strings"
 
-	"gopkg.in/yaml.v1"
 	"github.com/ilisin/itunnel/log"
+	"gopkg.in/yaml.v1"
 )
 
 type Configuration struct {

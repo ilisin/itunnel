@@ -6,7 +6,7 @@ import (
 
 	"github.com/ilisin/itunnel/client/mvc"
 	"github.com/ilisin/itunnel/client/views/term"
-		"github.com/ilisin/itunnel/log"
+	"github.com/ilisin/itunnel/log"
 	"github.com/ilisin/itunnel/proto"
 	"github.com/ilisin/itunnel/util"
 )

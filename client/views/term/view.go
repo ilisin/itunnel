@@ -4,11 +4,11 @@ package term
 import (
 	"time"
 
-	termbox "github.com/nsf/termbox-go"
 	"github.com/ilisin/itunnel/client/mvc"
 	"github.com/ilisin/itunnel/log"
 	"github.com/ilisin/itunnel/proto"
 	"github.com/ilisin/itunnel/util"
+	termbox "github.com/nsf/termbox-go"
 )
 
 type TermView struct {
